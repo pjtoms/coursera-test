@@ -1,0 +1,124 @@
+/*
+  Separate style sheet for module 2 assignment.
+
+  Notes:
+
+  Since we want css, don't modify too much of the standard html elements.
+  
+  The samples look like a container with a box(es) inside so going that
+  route.
+*/
+
+/* Base styles */
+* {
+  font-family: "Helvetica", sans-serif;
+  box-sizing: border-box;
+}
+
+/* style to center the heading and set the size */
+.h1-menu {
+  text-align: center;
+  font-size: 28px;  /* 75% larger than text font */
+}
+
+/* Box label */
+/* TODO - find a way to make the border size and offsets common */
+.box-label {
+  /* position, size */
+  width: 40%;
+  float: right;
+  padding-top: 4px;
+
+  /* box layout */
+  padding-bottom: 4px;
+  border: 3px solid black;
+  font-size: 20px;  /* 25% larger than 16px text font */
+  font-weight: bold;
+  text-align: center;
+  /* Got to be a better way than negative offsets tied to border size ... */
+  margin-top: -3px;
+  margin-right: -3px;
+}
+
+/*
+  Separate out the colors. Classes also allow mods at layout level.
+  Approximated the colors.
+*/
+.box-label-chicken {
+  background-color: pink;
+}
+
+.box-label-beef {
+  background-color: indianred;
+  color: white;
+}
+
+.box-label-sushi {
+  background-color: lightyellow;
+}
+
+/* Box text attributes */
+.box-text {
+  /* push below floated .box-label element to mimic sample screens */
+  clear: both;
+
+  font-size: 16px; /* our base font size */
+  margin: 5px;
+}
+
+/* Common container attributes using css attribute value selector */
+[class*="container-"] {
+  border: 3px solid black;
+  background-color: lightgrey;
+  margin: 1%;
+  float: left;
+}
+
+
+/* Desktop size layout */
+@media (min-width: 992px) {
+  /*
+    We want three columns. The common margin is 1% (all sides),
+    so use 31.33% for width instead of 33.33% to accomodate.
+
+    Similar calc for other layouts.
+    
+    Maybe heading/paragraph mods would make the calc simpler, but formatting
+    within the container might be influenced...?
+  */
+  .container-desktop {
+    width: 31.33%;
+  }
+}
+
+/* Tablet size layout */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container-tablet-top {
+    width: 48%;
+  }
+
+  /* Add some spacing to approximate the sample screens in assignment */
+  .container-tablet-bot {
+    width: 98%;
+    margin-top: 8px;
+  }
+
+  /* resize the label box since the container box is 2x width */
+  .box-label-sushi {
+    width: 20%;
+  }
+}
+
+/* Mobile size layout */
+@media (max-width: 767px) {
+  /* Add some spacing to approximate the sample screens in assignment */
+  .container-mobile {
+    width: 98%;
+    margin-top: 8px;
+  }
+
+  /* Change the label box size for a consistent look */
+  .box-label {
+    width: 30%;
+  }
+}
