@@ -1,0 +1,69 @@
+/*
+  Separate style sheet for module 3 assignment.
+
+  Notes:
+      Using bootstrap.min.css components.
+*/
+
+/** Global **/
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+/** HEADER **/
+
+#header-nav .container {
+  background-color: lightgrey;
+  border: 0 solid black;
+  border-bottom: 3px solid black;
+  margin: 0 0 0 0;
+  width: 100%;
+}
+
+.navbar-brand {
+  height: 60px;
+}
+
+.navbar-brand-text {
+  color: black;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.page-header {
+  color: black;
+	font-size: 2.0em;
+	font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: black;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: black;
+}
+.navbar-default .navbar-toggle[aria-expanded="true"] .icon-bar {
+  background-color: grey;
+  border-color: dimgrey;
+}
+
+.li-navbar-entry {
+  background-color: white;
+  border-bottom: 3px solid black;
+  color: black;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+
+/** Content **/
+
+.row-content-box {
+  background-color: lightgrey;
+}
